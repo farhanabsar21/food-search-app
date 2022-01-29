@@ -1,0 +1,16 @@
+@import "../../global.scss";
+
+.recipe-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5%;
+    .recipe-card{
+        padding: 5%;
+        box-shadow: 5px 5px 10px rgba(157, 225, 190, 0.2);
+        h6{
+            font-weight: 700;
+            color: $primary;
+            font-size: 16px;
+        }
+    }
+}

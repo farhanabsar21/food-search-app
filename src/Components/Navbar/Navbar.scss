@@ -1,0 +1,32 @@
+@import "../../global.scss";
+
+.navbar-section{
+    background-color: $primary;
+    padding: 1%;
+    color: $text;
+    nav{
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        .brand{
+            margin-right: auto;
+            text-decoration: none;
+            color: $text;
+        }
+        a{
+            &:last-child{
+                color: $text;
+                text-decoration: none;
+                margin-left: 40px;
+                padding: 8px 16px;
+                border: 1px solid $text;
+                border-radius: 5px;
+                &:hover{
+                    color: $primary;
+                    background-color: $text;
+                }
+            }
+        }
+    }
+}

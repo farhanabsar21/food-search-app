@@ -5,6 +5,7 @@ import Create from './Pages/Create/Create';
 import Recipe from './Pages/Recipe/Recipe';
 import Search from './Pages/Search/Search';
 import NotFound from './Pages/NotFound/NotFound';
+import Navbar from './Components/Navbar/Navbar';
 
 //page components
 
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Navbar/>
         <Switch>
           <Route exact path="/">
             <Home/>
@@ -19,7 +21,7 @@ function App() {
           <Route path="/create">
             <Create/>
           </Route>
-          <Route path="/recipe">
+          <Route path="/recipes/:id">
             <Recipe/>
           </Route>
           <Route path="/search">
