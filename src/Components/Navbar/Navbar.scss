@@ -2,8 +2,8 @@
 
 .navbar-section{
     background-color: $primary;
-    padding: 1%;
-    color: $text;
+    padding: 0.5%;
+    color: $background;
     nav{
         display: flex;
         align-items: center;
@@ -12,19 +12,19 @@
         .brand{
             margin-right: auto;
             text-decoration: none;
-            color: $text;
+            color: $background;
         }
         a{
             &:last-child{
-                color: $text;
+                color: $background;
                 text-decoration: none;
                 margin-left: 40px;
                 padding: 8px 16px;
-                border: 1px solid $text;
+                border: 1px solid $background;
                 border-radius: 5px;
                 &:hover{
                     color: $primary;
-                    background-color: $text;
+                    background-color: $background;
                 }
             }
         }

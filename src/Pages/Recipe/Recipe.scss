@@ -1,0 +1,21 @@
+@import "../../global.scss";
+
+.recipe-details-container{
+    padding: 5% 10%; 
+    .recipe-details{
+        max-width: 780px;
+        margin: 0 auto;
+        h1{
+            margin: 2.5% 0;
+        }
+        h6{
+            font-weight: 700;
+            color: $primary;
+            font-size: 16px;
+        }
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+    } 
+}

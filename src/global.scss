@@ -5,7 +5,7 @@ $textLight: #666;
 $white: #fff;
 $link: #e6005c;
 $background: #f2f2f2;
-$primary: #9de1be;
+$primary: #0033cc;
 $error: #e60000;
 
 *{
@@ -35,20 +35,23 @@ h1{
 }
 
 h2{
-    font-size: calc(14px + 2vw);  
+    font-size: calc(14px + 2vw);
+    margin: 2.5% 0;  
 }
 
 h3{
     font-size: calc(10px + 2vw);
+    margin: 2.5% 0;
 }
 
 p{
     font-size: calc(max(1.1vw, 16px));
-    margin-top: 1%;
+    margin: 2.5% 0;
 }
 
 a{
     text-decoration: none;
+    margin: 2.5% 0;
 }
 
 input, textarea{
@@ -58,6 +61,11 @@ input, textarea{
     color: $text;
     font-size: 16px;
     border-radius: 5px;
+}
+
+.small-title{
+    color: $textLight;
+    font-size: calc(max(0.8vw, 14px));;
 }
 
 .error{

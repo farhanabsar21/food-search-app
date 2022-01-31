@@ -2,15 +2,29 @@
 
 .recipe-container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5%;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.5% 0;
+    @media screen and (min-width: 601px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 2.5%;
+    }
     .recipe-card{
         padding: 5%;
-        box-shadow: 5px 5px 10px rgba(157, 225, 190, 0.2);
+        box-shadow: 5px 5px 10px rgba(0, 51, 204, 0.1);
+        border-radius: 10px;
         h6{
             font-weight: 700;
             color: $primary;
             font-size: 16px;
+        }
+        img{
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        a{
+            color: $link;
+            margin-top: 1%;
         }
     }
 }
