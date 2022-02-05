@@ -11,7 +11,7 @@
     .recipe-card{
         padding: 5%;
         box-shadow: 5px 5px 10px rgba(0, 51, 204, 0.1);
-        border-radius: 10px;
+        border-radius: 15px;
         h6{
             font-weight: 700;
             color: $primary;
@@ -20,11 +20,16 @@
         img{
             width: 100%;
             object-fit: cover;
-            border-radius: 10px;
+            max-height: 30vh;
+            border-radius: 15px;
         }
         a{
             color: $link;
             margin-top: 1%;
+            transition: 0.3s;
+            &:hover{
+                color: $primary;
+            }
         }
     }
 }

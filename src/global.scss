@@ -57,10 +57,11 @@ a{
 input, textarea{
     outline: 0;
     border: 0;
-    padding: 1% 2%;
-    color: $text;
+    padding: 12px 16px;
+    color: $textLight;
     font-size: 16px;
     border-radius: 5px;
+    width: 100%;
 }
 
 .small-title{

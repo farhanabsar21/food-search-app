@@ -1,7 +1,8 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useFetch from '../../Hooks/useFetch';
 import './Recipe.scss';
+import leftArrow from "../../icons/left-arrow.svg"
 
 const Recipe = () => {
     const { id } = useParams()
@@ -14,8 +15,14 @@ const Recipe = () => {
            {isPending && <p className='loading'>Loading..</p>}
            {recipe && 
                 <div className='recipe-details'>
+                    <Link to="/"><img src={leftArrow} alt="left-arrow" /></Link>
                     <h1>{recipe.title}</h1> 
-                    <h6>{recipe.cookingTime} <span className='small-title'>to make</span></h6>   
+                    <h6>{recipe.cookingTime} <span className='small-title'>to make</span></h6> 
+                    <div className="ingredients">
+                        <ul>
+                            {recipe.ingredients.map(ing => <li key={ing}>{ing}</li>)}
+                        </ul>
+                    </div>
                     <p>{recipe.method}</p>     
                     <img src={!recipe.photo? `/assets/common.jpg`: `/assets/${recipe.photo}.jpg`} alt={recipe.title}/>
                 </div>

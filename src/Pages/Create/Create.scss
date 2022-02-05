@@ -1,0 +1,61 @@
+@import '../../global.scss';
+
+.create-section{
+    padding: 5% 10%; 
+    .create-header{
+        text-align: center;
+    }
+    .create-body{
+        max-width: 480px;
+        margin: 0 auto;
+        .input-title{
+            display: block;
+            margin: 2.5% 0;
+        }
+        small{
+            font-size: calc(10px + 0.8vmin);
+            color: $textLight;
+        }
+        .current-ing{
+            color: $link;
+            font-size: calc(6px + 1vmin);
+        }
+        .ingredients{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            button{
+                outline: none;
+                border: 2px solid $primary; 
+                padding: 10px 16px;
+                border-radius: 3px;
+                font-size: calc(10px + 1vmin);
+                background-color: $white;
+                color: $primary;
+                margin-left: 2.5%;
+                font-weight: 700;
+                cursor: pointer;
+            }
+        }
+        .btn-container{
+            margin: 2.5% 0;
+            padding: 2.5% 0;
+            text-align: center;
+            button{
+                outline: none;
+                border: 2px solid $text;
+                padding: 8px 16px;
+                color: $text;
+                font-size: calc(10px + 1vmin);
+                background-color: $background;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: 0.3s;
+                &:hover{
+                    background-color: $text;
+                    color: $background;
+                }
+            }
+        }
+    }
+}

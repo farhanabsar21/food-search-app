@@ -5,6 +5,11 @@
     .recipe-details{
         max-width: 780px;
         margin: 0 auto;
+        a{
+            img{
+                width: calc(10px + 2vmin);
+            }
+        }
         h1{
             margin: 2.5% 0;
         }
@@ -16,6 +21,30 @@
         img{
             width: 100%;
             object-fit: cover;
+            max-height: 300px;
+            @media screen and (min-width: 601px) {
+                max-height: 550px;
+            }
+        }
+        .ingredients{
+            padding: 1% 0;
+            ul{
+                margin-left: 2.5%;
+                li{
+                    color: $textLight;
+                    margin-top: 1%;
+                    font-size: calc(8px + 1vmin);
+                    font-style: italic;
+                    &::after{
+                        content: ",";
+                    }
+                    &:last-child{
+                        &::after{
+                            content: "";
+                        }
+                    }
+                }
+            }
         }
     } 
 }

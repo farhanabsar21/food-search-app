@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import "./RecipeList.scss";
 
 const RecipeList = ({recipes}) => {
-    console.log(recipes)
     return (
         <div className='recipe-container'>
             {recipes.map(recipe => 
