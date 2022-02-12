@@ -6,6 +6,7 @@ import Recipe from './Pages/Recipe/Recipe';
 import Search from './Pages/Search/Search';
 import NotFound from './Pages/NotFound/NotFound';
 import Navbar from './Components/Navbar/Navbar';
+import ColorButtons from './Components/ColorButtons/ColorButtons';
 
 //page components
 
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar/>
+        <ColorButtons/>
         <Switch>
           <Route exact path="/">
             <Home/>

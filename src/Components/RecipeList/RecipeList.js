@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import "./RecipeList.scss";
 
 const RecipeList = ({recipes}) => {
+
+    if(recipes.length === 0){
+        return <div className='error-card'>
+            <p className="error">No recipes found</p>
+            <a href="/">Go to homepage</a>
+        </div>
+    }
     return (
         <div className='recipe-container'>
             {recipes.map(recipe => 

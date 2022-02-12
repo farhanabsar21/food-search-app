@@ -1,0 +1,16 @@
+@import '../../global.scss';
+
+.btn-container{
+    position: fixed;
+    top: 50%;
+    left: 2.5%;
+    .btn-main{
+        display: block;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        border: 2px solid #3333cc;
+        margin-top: 25%;
+        cursor: pointer;
+    }
+}

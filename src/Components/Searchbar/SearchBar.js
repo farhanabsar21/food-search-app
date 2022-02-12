@@ -5,7 +5,7 @@ import "./SearchBar.scss";
 const SearchBar = () => {
     const [term, setTerm] = useState("")
     let history = useHistory()
-
+    
     const handleSearch = e => {
         e.preventDefault()
         history.push(`/search?q=${term}`)
