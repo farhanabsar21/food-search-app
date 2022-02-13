@@ -7,12 +7,14 @@ import Search from './Pages/Search/Search';
 import NotFound from './Pages/NotFound/NotFound';
 import Navbar from './Components/Navbar/Navbar';
 import ColorButtons from './Components/ColorButtons/ColorButtons';
+import useTheme from './Hooks/useTheme';
 
 //page components
 
 function App() {
+  const { mode } = useTheme()
   return (
-    <div className="App">
+    <div className={`App ${mode}`}>
       <BrowserRouter>
         <Navbar/>
         <ColorButtons/>

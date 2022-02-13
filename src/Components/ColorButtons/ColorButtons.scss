@@ -1,8 +1,24 @@
 @import '../../global.scss';
 
+.mode-btn-container{
+    position: fixed;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #3333cc;
+    top: 50%;
+    right: 2.5%;
+    cursor: pointer;
+    transform: translateY(-50%);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.1);
+}
 .btn-container{
     position: fixed;
     top: 50%;
+    transform: translateY(-50%);
     left: 2.5%;
     .btn-main{
         display: block;
