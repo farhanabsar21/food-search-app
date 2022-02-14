@@ -24,6 +24,7 @@ body{
     color: $text;
     line-height: 1.5;
     background-color: $background;
+    transition: 0.3s;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -78,4 +79,5 @@ input, textarea{
 
 .dark{
     background-color: $text;
+    transition: 0.3s;
 }

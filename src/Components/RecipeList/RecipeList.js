@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./RecipeList.scss";
+import useTheme from "../../Hooks/useTheme"
 
 const RecipeList = ({recipes}) => {
+
+    const { mode } = useTheme()
 
     if(recipes.length === 0){
         return <div className='error-card'>
@@ -13,7 +16,7 @@ const RecipeList = ({recipes}) => {
     return (
         <div className='recipe-container'>
             {recipes.map(recipe => 
-                <div className='recipe-card' key={recipe.id}>
+                <div className={`recipe-card ${mode}`} key={recipe.id}>
                     <img src={!recipe.photo? `/assets/common.jpg`: `/assets/${recipe.photo}.jpg`} alt={recipe.title} />
                     <h3>{recipe.title}</h3>
                     <h6>{recipe.cookingTime} <span className='small-title'>to make</span></h6>

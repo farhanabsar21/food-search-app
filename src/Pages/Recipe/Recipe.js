@@ -3,19 +3,22 @@ import { Link, useParams } from 'react-router-dom';
 import useFetch from '../../Hooks/useFetch';
 import './Recipe.scss';
 import leftArrow from "../../icons/left-arrow.svg"
+import leftArrowLight from "../../icons/left-arrow-light.svg"
+import useTheme from '../../Hooks/useTheme';
 
 const Recipe = () => {
     const { id } = useParams()
     const url = `http://localhost:3000/recipes/${id}`
     const { data: recipe, isPending, error } = useFetch(url)
+    const { mode } = useTheme()
 
     return (
         <div className='recipe-details-container'>
            {error && <p className='error'>{error}</p>}
            {isPending && <p className='loading'>Loading..</p>}
            {recipe && 
-                <div className='recipe-details'>
-                    <Link to="/"><img src={leftArrow} alt="left-arrow" /></Link>
+                <div className={`recipe-details ${mode}`}>
+                    {mode === 'dark' ? <Link to="/"><img src={leftArrowLight} alt="left-arrow-light" /></Link> : <Link to="/"><img src={leftArrow} alt="left-arrow" /></Link>}
                     <h1>{recipe.title}</h1> 
                     <h6>{recipe.cookingTime} <span className='small-title'>to make</span></h6> 
                     <div className="ingredients">

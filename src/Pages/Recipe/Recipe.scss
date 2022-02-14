@@ -47,4 +47,17 @@
             }
         }
     } 
+    .dark{
+        color: $background;
+        h6{
+            color: $link;
+        }
+        .ingredients{
+            ul{
+                li{
+                    color: $background;
+                }
+            }
+        }
+    }
 }

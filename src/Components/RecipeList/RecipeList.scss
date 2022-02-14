@@ -11,6 +11,9 @@
         padding: 5%;
         box-shadow: 5px 5px 10px rgba(0, 51, 204, 0.1);
         border-radius: 15px;
+        background-color: $background;
+        border: 3px solid $background;
+        transition: 0.3s;
         h6{
             font-weight: 700;
             color: $primary;
@@ -29,6 +32,15 @@
             &:hover{
                 color: $primary;
             }
+        }
+    }
+    .dark{
+        background-color: $text;
+        border: 3px solid $link;
+        color: $background;
+        transition: 0.3s;
+        h6{
+            color: $link;
         }
     }
 }
