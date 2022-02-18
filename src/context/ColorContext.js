@@ -18,7 +18,7 @@ export const ColorContextProvider = ({ children }) => {
     
     // initial reducer state
     const [state, dispatch] = useReducer(colorReducer, { 
-        color: "#f2f2f2", mode: "dark" 
+        color: "#f2f2f2", mode: "light" 
     }) 
     
     // dispatch function
