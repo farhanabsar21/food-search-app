@@ -1,45 +1,38 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import useFetch from '../../Hooks/useFetch';
+import { projectFirestore } from '../../firebase/config';
 import './Create.scss';
 
 const Create = () => {
     const [title, setTitle] = useState("")
     const [method, setMethod] = useState("")
     const [cookingTime, setCookingTime] = useState("")
-    const [photo, setPhoto] = useState("")
     const [newIngredient, setNewIngredient] = useState("")
     const [ingredients, setIngredients] = useState([])
 
     const ingredientsInput = useRef(null)
 
     let history = useHistory()
-
-    // sending post request
-    const { postReq, data, error } = useFetch("http://localhost:3000/recipes", "POST")
     
     // submitting data
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault()
-        postReq({
+        const doc = {
             title: title,
             ingredients: ingredients,
             method: method,
             cookingTime: cookingTime + " minutes",
-            photo: photo
-        })
+        }
+        try{
+            await projectFirestore.collection('recipes').add(doc)
+            history.push("/")
+        }catch (err){
+            console.log(err)
+        }
         setTitle("")
         setMethod("")
         setCookingTime("")
-        setPhoto("")
     }
-
-    // redirect to home page
-    useEffect(()=> {
-        if(data){
-            history.push("/")
-        }
-    }, [data, history])
 
     // add ingredients
     const handleAddIngredient = e => {
@@ -98,17 +91,7 @@ const Create = () => {
                             required
                         />
                     </label>
-                    <label>
-                        <span className='input-title'>Image name:</span>
-                        <small>*name your image (i.e: food-4, food-5...)</small>
-                        <input 
-                            type="text" 
-                            onChange={(e) => setPhoto(e.target.value)}
-                            value={photo}
-                            required
-                        />
-                    </label>
-                    <div className="btn-container">
+                    <div className="btn-container-submit">
                         <button type='submit'>Submit</button>
                     </div>
                 </form>
